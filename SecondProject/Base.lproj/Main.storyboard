@@ -17,13 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ufy-Ot-64n">
-                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                <color key="tintColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkY-fb-bPm">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="I like buttons">
+                                    <color key="titleColor" red="0.40000000596046448" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="235" y="393" width="311" height="31"/>
+                                    <rect key="frame" x="322" y="317" width="137" height="30"/>
                                 </variation>
-                            </slider>
+                            </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fAX-Ob-IYP">
                                 <rect key="frame" x="-25" y="-15" width="51" height="31"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -53,38 +55,51 @@
                                     <rect key="frame" x="380" y="365" width="20" height="20"/>
                                 </variation>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkY-fb-bPm">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
-                                <state key="normal" title="I like buttons">
-                                    <color key="titleColor" red="0.40000000596046448" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk7-b5-Xgp">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="322" y="317" width="137" height="30"/>
+                                    <rect key="frame" x="369" y="548" width="46" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="ColorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WbY-ss-LOj"/>
+                                    <action selector="ColorSwitch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bc7-al-JfN"/>
+                                </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ufy-Ot-64n">
+                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <color key="tintColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="235" y="398" width="311" height="31"/>
+                                </variation>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="Ufy-Ot-64n"/>
                                 <exclude reference="fAX-Ob-IYP"/>
                                 <exclude reference="Cpi-dB-bSh"/>
                                 <exclude reference="8zD-tb-8G9"/>
                                 <exclude reference="Pps-l4-Ru7"/>
+                                <exclude reference="sk7-b5-Xgp"/>
+                                <exclude reference="Ufy-Ot-64n"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
-                                <include reference="Ufy-Ot-64n"/>
                                 <include reference="fAX-Ob-IYP"/>
                                 <include reference="Cpi-dB-bSh"/>
                                 <include reference="8zD-tb-8G9"/>
                                 <include reference="Pps-l4-Ru7"/>
+                                <include reference="sk7-b5-Xgp"/>
+                                <include reference="Ufy-Ot-64n"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="appBackground" destination="8bC-Xf-vdC" id="SSh-HK-JeQ"/>
                         <outlet property="projectActiivity" destination="8bC-Xf-vdC" id="4bA-ys-7Wd"/>
+                        <outlet property="projectButton" destination="sk7-b5-Xgp" id="aHJ-Ia-Yqw"/>
                         <outlet property="projectSlider" destination="Ufy-Ot-64n" id="HsM-V0-f7q"/>
                         <outlet property="projectSwitch" destination="fAX-Ob-IYP" id="Xjk-5t-MAI"/>
                         <outlet property="textLabel" destination="rkY-fb-bPm" id="HE8-xF-Hz9"/>
